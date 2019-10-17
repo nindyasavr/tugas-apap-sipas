@@ -14,7 +14,7 @@
     <br>
     Jenis Kelamin:
     <br>
-    <select name="jenisKelamin" size="2">
+    <select name="jenisKelamin">
         <option value=2>Perempuan</option>
         <option value=1>Laki-laki</option>
     </select>
@@ -26,8 +26,23 @@
     <input type="text" name="tempatLahir"/>
     <br>
     Asuransi <br>
-    <input type="text" name="NIKPasien"/>
+    <select name="listPasienAsuransi">
+        <option value="asuransi" th:each="asuransi, iterationStatus : ${listAsuransi}">
+            <a th:text="${asuransi.namaAsuransi}"></a>
+        </option>
+    </select>
     <br>
+    <div>
+    Emergency Contact Name: <br>
+    <input type="text" name="emergencyContact.name"/>
+    <br>
+    Emergency Contact NIK: <br>
+    <input type="text" name="emergencyContact.nik"/>
+    <br>
+    Emergency Contact Phone: <br>
+    <input type="text" name="EmergencyContact.no_telp"/>
+    <br>
+    </div>
     <button type="submit"> Submit </button>
 </form>
 </body>

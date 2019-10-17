@@ -8,7 +8,7 @@
 <body>
 <nav th:replace="fragments/fragment :: navbar"></nav>
 <h2 th:align="center">Sistem Informasi Pasien</h2>
-<button class="btn btn-primary">Tambah Pasien Baru</button>
+<button class="btn btn-primary"><a th:href="@{/pasien/tambah}">Tambah Pasien Baru</a></button>
     <table class="table order-list">
         <thead>
             <th>No</th>
@@ -32,7 +32,7 @@
                 <td th:text="${pasien.emergencyContact.noTelp}"></td>
                 <td>
                     <button class="btn btn-primary">Tambah Diagnosis</button>
-                    <button class="btn btn-primary">Lihat</button>
+                    <button class="btn btn-primary"><a th:action="@{/pasien/} + ${pasien.NIKPasien}">Lihat</a></button>
                     <button class="btn btn-primary">Ubah</button>
                     <button class="btn btn-danger">Hapus</button>
                 </td>
