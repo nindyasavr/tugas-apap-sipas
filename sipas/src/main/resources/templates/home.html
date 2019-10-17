@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+<body>
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<h2 th:align="center">Sistem Informasi Pasien</h2>
+<button class="btn btn-primary">Tambah Pasien Baru</button>
+    <table class="table order-list">
+        <thead>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIK</th>
+            <th>Jenis Kelamin</th>
+        <th>Kode Pasien</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Telepon Emergency Contact</th>
+        <th></th>
+        <tbody>
+            <tr th:each="pasien, iterationStatus : *{listPasien}">
+                <td th:text="${iterationStatus.count}"></td>
+                <td th:text="${pasien.namaPasien}"></td>
+                <td th:text="${pasien.NIKPasien}"></td>
+                <td th:text="${pasien.jenisKelamin} == 1 ? 'Laki-laki' : 'Perempuan'"></td>
+                <td th:text="${pasien.kodePasien}"></td>
+                <td th:text="${pasien.tempatLahir}"></td>
+                <td th:text="${pasien.tanggalLahir}"></td>
+                <td th:text="${pasien.emergencyContact.noTelp}"></td>
+                <td>
+                    <button class="btn btn-primary">Tambah Diagnosis</button>
+                    <button class="btn btn-primary">Lihat</button>
+                    <button class="btn btn-primary">Ubah</button>
+                    <button class="btn btn-danger">Hapus</button>
+                </td>
+            </tr>
+        </tbody>
+        </thead>
+    </table>
+
+</body>
+</html>

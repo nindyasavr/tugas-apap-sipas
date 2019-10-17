@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Tambah Pasien Baru</title>
+</head>
+<body>
+<form th:action="@{/pasien/tambah}" th:object="${pasien}" method="POST">
+    Nama: <br>
+    <input type="text" name="namaPasien"/>
+    <br>
+    NIK: <br>
+    <input type="text" name="nikPasien"/>
+    <br>
+    Jenis Kelamin:
+    <br>
+    <select name="jenisKelamin" size="2">
+        <option value=2>Perempuan</option>
+        <option value=1>Laki-laki</option>
+    </select>
+    <br>
+    Tanggal Lahir <br>
+    <input type="date" name="tanggalLahir"/>
+    <br>
+    Tempat Lahir: <br>
+    <input type="text" name="tempatLahir"/>
+    <br>
+    Asuransi <br>
+    <input type="text" name="NIKPasien"/>
+    <br>
+    <button type="submit"> Submit </button>
+</form>
+</body>
+</html>
